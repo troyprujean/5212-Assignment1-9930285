@@ -8,45 +8,10 @@ namespace question4
 {
     class Person
     {
-        string fName, lName;
-        int birthYear;
-
-        public string FirstName
-        {
-            get 
-            {
-                return fName;
-            }
-            set
-            {
-                fName = value;
-            }
-        }
-
-        public string LastName
-        {
-            get
-            {
-                return lName;
-            }
-            set
-            {
-                lName = value;
-            }
-        }
-
-        public int YearOfBirth
-        {
-            get
-            {
-                return birthYear;
-            }
-            set
-            {
-                birthYear = value;
-            }
-        }
-
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int YearOfBirth { get; set; }
+        
         public Person(string firstName, string lastName)
         {
             FirstName = firstName;

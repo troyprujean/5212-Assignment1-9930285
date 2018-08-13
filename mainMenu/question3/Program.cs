@@ -10,16 +10,16 @@ namespace question3
     {
         static void Main(string[] args)
         {
+            Car car1 = new Car();
             Console.WriteLine("Enter new car details below:");
             Console.Write("Colour: ");
-            string userInput1 = Console.ReadLine();
+            car1.colour = Console.ReadLine();
             Console.Write("Make: ");
-            string userInput2 = Console.ReadLine();
+            car1.make = Console.ReadLine();
             Console.Write("Gearbox: ");
-            string userInput3 = Console.ReadLine();
-            Car car1 = new Car(userInput1, userInput2, userInput3);
+            car1.gearbox = Console.ReadLine();
             Console.WriteLine("\n\n");
-            Console.WriteLine($"The car is a {car1.GetColour()} {car1.GetMake()} with a {car1.GetGearbox()} transmission");
+            Console.WriteLine($"The car is a {car1.colour} {car1.make} with a {car1.gearbox} transmission");
             Console.ReadLine();
         }
     }

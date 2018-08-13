@@ -16,15 +16,23 @@ namespace question4
             do
             {
                 Console.Write("First name: ");
-                string userInput1 = Console.ReadLine();
+                string userFName = Console.ReadLine();
                 Console.Write("Last name: ");
-                string userInput2 = Console.ReadLine();
+                string userLName = Console.ReadLine();
                 Console.WriteLine("\n\n");
                 Console.WriteLine("Creating new person record ...");
                 Console.WriteLine("\n");
                 Console.Write("Enter year of birth: ");
-                int userInput3 = int.Parse(Console.ReadLine());
-                people.Add(new Person(userInput1, userInput2){YearOfBirth = userInput3});
+                int userYOB = int.Parse(Console.ReadLine());
+                people.Add(new Person(userFName, userLName){YearOfBirth = userYOB});
+                Console.WriteLine("\n\n");
+                foreach (Person x in people)
+                {   
+                    if (x.FirstName == userFName && x.LastName == userLName)
+                    {
+                        Console.WriteLine($"Person: {x.FirstName} {x.LastName} is {x.GetAge()} years old");
+                    }
+                }
                 Console.WriteLine("\n\n");
                 Console.Write("Do you want to enter a new person? <y/n>");
                 string userInput4 = Console.ReadLine();
@@ -37,11 +45,6 @@ namespace question4
                     newPerson = false;
                 }
             } while (newPerson);
-
-            foreach(Person x in people)
-            {
-                Console.WriteLine($"Person: {x.FirstName} {x.LastName} is {x.GetAge()} years old");
-            }
         }
     }
 }
