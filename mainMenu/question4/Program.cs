@@ -71,21 +71,32 @@ namespace question4
                         Console.WriteLine($"Person: {x.FirstName} {x.LastName} is {x.GetAge()} years old");
                     }
                 }
-                Console.Write("\n\nDo you want to enter a new person? <y/n>");
-                string userInput = Console.ReadLine();
-                //checking to see if the user wants to add another object or not
-                if (userInput == "y")
+
+                do //loop the following code until a valid key (either y or n) is pressed
                 {
-                    newPerson = true; //if the user enters y the program will loop
-                    Console.Clear();
-                }
-                else if (userInput == "n")
-                {
-                    newPerson = false; //if the user enters n the program will break out of the main loop and end
-                }
+                    Console.Write("\nDo you want to enter a new person? <y/n>\n");
+                    ConsoleKeyInfo userSelection = Console.ReadKey();
+                    //checking to see if the user wants to add another object or not
+                    if (userSelection.KeyChar == 'y')
+                    {
+                        newPerson = true; //if the user enters y the program will loop
+                        Console.Clear();
+                        validated = true;
+                    }
+                    else if (userSelection.KeyChar == 'n')
+                    {
+                        newPerson = false; //if the user enters n the program will break out of the main loop and end
+                        validated = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nInvalid input, please press either y or n");
+                    }
+                } while (!validated);
+            validated = false; //reinstating the value of the boolean variable to false so it can be recycled
+
             } while (newPerson); //while the value of newPerson = true the program will keep allowing the user to create more objects
-        Console.WriteLine("\nPress enter to continue...");
-        Console.ReadLine();
+        
         Console.Clear();
         return;
         }

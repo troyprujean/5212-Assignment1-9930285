@@ -16,47 +16,51 @@ namespace mainMenu
 {
     class Program
     {   
-        static void Main()
+        static bool exitProgram = false;
+        public static void Main()
         {
-            Console.WriteLine("Welcome to Troy's assignment submission for 5212 - Assignment 1");
-            Console.WriteLine("Please enter the number of the question you would like to view:\n");
-            Console.WriteLine("(1) - Question 1");
-            Console.WriteLine("(2) - Question 2");
-            Console.WriteLine("(3) - Question 3");
-            Console.WriteLine("(4) - Question 4");
-            Console.WriteLine("(5) - Question 5");
-            Console.WriteLine("(0) - Exit");
-            ConsoleKeyInfo userSelection = Console.ReadKey();
-
-            switch(userSelection.KeyChar)
+            do
             {
-                case '1':
-                    Console.Clear();
-                    question1.Program.Main();
-                    break;
-                case '2':
-                    Console.Clear();
-                    break;
-                case '3':
-                    Console.Clear();
-                    question3.Program.Main();
-                    break;
-                case '4':
-                    Console.Clear();
-                    question4.Program.Main();
-                    break;
-                case '5':
-                    Console.Clear();
-                    question5.Program.Main();
-                    break;
-                case '0':
-                    Console.Clear();
-                    break;
-                default:
-                    Console.Clear();
-                    Console.WriteLine("Error");
-                    break;
-            }
+                Console.WriteLine("Welcome to Troy's assignment submission for 5212 - Assignment 1");
+                Console.WriteLine("Please press the number of the question you would like to view:\n");
+                Console.WriteLine("(1) - Question 1");
+                Console.WriteLine("(2) - Question 2");
+                Console.WriteLine("(3) - Question 3");
+                Console.WriteLine("(4) - Question 4");
+                Console.WriteLine("(5) - Question 5");
+                Console.WriteLine("(0) - Exit");
+                ConsoleKeyInfo userSelection = Console.ReadKey();
+
+                switch (userSelection.KeyChar)
+                {
+                    case '1':
+                        Console.Clear();
+                        question1.Program.Main();
+                        break;
+                    case '2':
+                        Console.Clear();
+                        break;
+                    case '3':
+                        Console.Clear();
+                        question3.Program.Main();
+                        break;
+                    case '4':
+                        Console.Clear();
+                        question4.Program.Main();
+                        break;
+                    case '5':
+                        Console.Clear();
+                        question5.Program.Main();
+                        break;
+                    case '0':
+                        exitProgram = true;
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Invalid input please press a number from 0 - 5\n");
+                        break;
+                }
+            } while (!exitProgram);
         }
     }
 }
