@@ -14,7 +14,7 @@ using question5;
 
 namespace mainMenu
 {
-    class Program
+    public class Program
     {   
         static bool exitProgram = false;
         public static void Main()

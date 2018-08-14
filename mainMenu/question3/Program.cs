@@ -58,18 +58,24 @@ namespace question3
         //boolean method for validating user input
         public static bool IsValid(string input)
         {
-            int value; //int variable so the TryParse method has something to parse to
             if (string.IsNullOrEmpty(input)) //checking to see if the user has entered nothing
             {
                 Console.WriteLine("You did not enter anything, please try again"); //outputting error message
                 return false;
             }
-            else if (int.TryParse(input, out value)) //checking to see if the user has entered a number
-            {
-                Console.WriteLine("Invalid input, numeric values cannot be used"); //outputting error message
-                return false;
+            //the below code converts each character in the indices of the string array to an integer to check if it is a number between 0 & 9 using their decimal ASCII codes
+            //to determine whether the user has entered a number in the string. The tryparse method only works for the first character of the string array, for example if the
+            //first character is a letter and the second a number it would still parse, so this method was implemented to prevent any number being entered in the string.
+            foreach (char x in input)
+            {   //checking for numeric values in each character indices of the string array
+                int value = Convert.ToInt32(x);
+                if (value >= 48 && value <= 57) //decimal ASCII values of 0 - 9
+                {
+                    Console.WriteLine("Invalid input, numeric values cannot be used"); //outputting error message
+                    return false;
+                }
             }
-            else return true;
+            return true;
             //if the input does not meet any of the above conditions it is deemed valid and the method will return true
         }
     }
