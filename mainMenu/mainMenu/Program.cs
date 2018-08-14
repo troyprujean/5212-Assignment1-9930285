@@ -39,6 +39,7 @@ namespace mainMenu
                         break;
                     case '2':
                         Console.Clear();
+                        Console.WriteLine("Please open the question2.docx file in the root directory of the assignment folder");
                         break;
                     case '3':
                         Console.Clear();

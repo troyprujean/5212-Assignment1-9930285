@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace question4
 {
-    class Person
+    public class Person
     {
         //auto implemented properties
         public string FirstName { get; set; }
