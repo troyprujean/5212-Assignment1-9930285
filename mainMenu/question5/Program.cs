@@ -52,6 +52,10 @@ namespace question5
             Student student1 = new Student(userFName, userLName, userCampus); //instantia
             student1.StudentID = student1.EnrollStudent(); //setting the autoimplemented student ID property with a random 4 digit number provided from the enroll student method
             Console.WriteLine($"{student1.FirstName} {student1.LastName} of {student1.Campus} campus has a student ID of {student1.StudentID}");
+            Console.WriteLine("\nPress enter to continue...");
+            Console.ReadLine();
+            Console.Clear();
+            return;
         }
 
         //boolean method for validating string inputs

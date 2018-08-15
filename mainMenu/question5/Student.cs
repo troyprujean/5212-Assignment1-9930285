@@ -21,11 +21,11 @@ namespace question5
             Campus = campus;
         }
 
-        //method for creating a random 4 digit number
+        //method for creating a random 4 digit number - starting from 1000 so that numbers with leading zeros arent cut short using the int type
         public int EnrollStudent()
         {
             Random ID = new Random();
-            return ID.Next(0000,9999);
+            return ID.Next(1000,9999);
         }
     }
 }
